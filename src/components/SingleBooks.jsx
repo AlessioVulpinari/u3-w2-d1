@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { Badge, Card, Col } from "react-bootstrap"
+import CommentArea from "./CommentArea"
 
 class SingleBooks extends Component {
   state = { selected: false }
@@ -21,6 +22,11 @@ class SingleBooks extends Component {
               <span>{this.props.bookIns.category.charAt(0).toUpperCase() + this.props.bookIns.category.slice(1)}</span>
               <Badge bg='success'>{this.props.bookIns.price}</Badge>
             </Card.Text>
+            {this.state.selected === true ? (
+              <CommentArea elementId={this.props.bookIns.asin} />
+            ) : (
+              console.log("Elemento non selezionato")
+            )}
           </Card.Body>
         </Card>
       </Col>
