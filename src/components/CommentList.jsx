@@ -4,9 +4,9 @@ const CommentList = (props) => {
   return (
     <>
       {props.comments !== null ? (
-        <ul key={props.elementId}>
+        <ul>
           {props.comments.map((comment) => {
-            return <SingleComment comment={comment} />
+            return <SingleComment comment={comment} key={props.elementId} />
           })}
         </ul>
       ) : (
